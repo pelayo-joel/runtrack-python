@@ -7,12 +7,11 @@ def PasCompris(rndWord):
         j = len(rndWord) - 1
         if rndWord[i] == " " or rndWord[i] in forbiddenChar or rndWord[i].isupper():
             return print("Invalid character : only lowercase characters are accepted")
-        while j > 0:
-            if newWord[j] > newWord[j - 1]:
-                tmp = newWord[j]
-                newWord[j] = newWord[j-1]
-                newWord[j-1] = tmp
-            j -= 1
+        while j > 0 and newWord[j] > newWord[j - 1]:
+            tmp = newWord[j]
+            newWord[j] = newWord[j-1]
+            newWord[j-1] = tmp
+            break
         i += 1
 
     return "".join(newWord)
